@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title>Approval Status</title>
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/util.css">
+  <link rel="stylesheet" href="css/gijgo.min.css">
+  <link rel="stylesheet" href="css/bootstrap-glyphicons.min.css">
+  <link rel="stylesheet" href="css/form-validator-theme-default.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/skin.css">
+  <!--[if lt IE 9]>
+    <script src="js/html5shiv.min.js"></script>
+    <![endif]-->
+  <!--[if lt IE 10]>
+    <script src="js/media.match.min.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+  <script src="js/breakpoints.min.js"></script>
+  <script>
+    Breakpoints();
+  </script>
+  </head>
+  <body>
+<!-- Header -->
+<header class="container-fluid">
+    <div class="row header-block">
+    <div class="col-6 col-sm-6 header-logo1"> <img src="images/healthcare-logo.png" width="189" height="59" class="img-fluid" alt="Community Acute Care Center" /> </div>
+    <div class="col-6 col-sm-6 header-logo2"><img src="images/bank-logo.png" width="151" height="70" class="img-fluid" alt="National Bank" /> </div>
+  </div>
+  </header>
+<!-- Main Container -->
+<div class="container-fluid">
+    <div class="row">
+    <div class="col-xs-8 col-md-8 offset-md-2 page-block"> 
+        <!-- Navigation -->
+        <nav class="row">
+        <div class="col first-link"><a class="nav-links">Patient Information</a></div>
+        <div class="col second-link"><a class="nav-links">Guarantor Information</a></div>
+        <div class="col third-link"><a class="nav-links">Income Information</a></div>
+        <div class="col fourth-link"><a class="nav-links">Banking Information</a></div>
+        <div class="col fifth-link active-link"><a class="nav-links">Approval Status</a></div>
+      </nav>
+        <!-- Heading and form content -->
+        <section class="row">
+        <div class="col-12 col-xs-10 col-md-10 offset-md-1 m-t-20">
+            <h1 class="form-heading">Approval Status</h1>
+        </div>
+        <div class="col-12 col-xs-10 col-md-10 offset-md-1"> 
+        	<!-- Form Success or Error Alerts Start -->
+         	 <div class="alert alert-success"> <strong>Success!</strong> </div>
+         	 <div class="alert alert-danger"> <strong>Error!</strong> </div>
+        	<!-- Form Success or Error Alerts End -->
+            <!-- Form Success or Error Alerts End -->
+            <form action="/" method="post" id="approvalstatus" class="m-t-10 m-b-20 row form  toggle-disabled">
+            <div class="col-12 col-sm-12">
+                <div class="app-headline">John, you have been approved for a $7,000 credit line. Your payment will be $195.00 per month.</div>
+                <div class="accept-app m-t-10">To accept your application, complete steps 1 through 5 below.
+                Then type your name and click "Accept" to electronically sign the application.</div>
+                <div class="accept-app m-t-10 credits-consents">Click here to review line of Credit consents, Agreements and Disclosures.</div>
+                
+                <div class="tc-credits">
+                <span class="close-butt">Terms & Conditions<img src="images/close.png"></span>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Q is ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.
+                </div>
+                <div class="accept-step m-t-10">Step 1</div>
+                <div class="accept-app m-b-5"><b>ELECTRONIC CONSENT</b> - allows us to communicate with you electronically. <span class="elctro-consent">Click here to read.</span></div>
+                <div class="tc-credits-ec">
+                <span class="close-butt">Terms & Conditions<img src="images/close.png"></span>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Q is ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.
+                </div>
+                <div class="accept-app">
+                	<label class="checkbox-inline"><input type="checkbox" class="" id="stepone" value="" data-validation="custom" data-validation-error-msg="Please accept the checkbox for approval" required>Yes, I have read and agree.</label>
+                </div>
+                <div class="accept-step">Step 2</div>
+                <div class="accept-app m-b-5"><b>TERMS & CONDITIONS</b> - By checking the box and electronically signing below, you accept the terms and 
+                conditions here and in the Application Agreement and Payment Authorization. <span class="terms-cond">Click here to read.</span></div>
+                <div class="tc-credits-tc">
+                <span class="close-butt">Terms & Conditions<img src="images/close.png"></span>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Q is ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.
+                </div>
+                <div class="accept-app">
+                	<label class="checkbox-inline"><input type="checkbox" class="" id="steptwo" value="" data-validation="custom" data-validation-error-msg="Please accept the checkbox for approval" required>Yes, I have read and agree.</label>
+                </div>
+                <div class="accept-step">Step 3</div>
+                <div class="accept-app m-b-5"><b>TEXT MESSAGES & TELEMARKETING CONSENT (TCPA)</b> - By providing us with your wireless phone number, you authorize us to contact you from time to time regarding your application and Line of Credit at that number using text messages. You further authorize system. You are not required to consent to receive telemarketing or text messages from us; however, it may enable us to more comprehensively communicate with you. <span class="textmsg-tm">Click here to read.</span></div>
+                <div class="tc-credits-tm">
+                <span class="close-butt">Terms & Conditions<img src="images/close.png"></span>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Q is ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.
+                </div>
+                <div class="accept-app">
+                	<label class="checkbox-inline"><input type="checkbox" class="" id="stepthree" value="" data-validation="custom" data-validation-error-msg="Please accept the checkbox for approval" required>Yes, I have read and agree.</label>
+                </div>
+                <div class="accept-step">Step 4</div>
+                <div class="accept-app m-b-5"><b>PAYMENT AUTHORIZATION</b> -By checking the box and electronically signing below, you agree to the Payment Authorization. <span class="payauth">Click here to read.</span></div>
+                <div class="tc-credits-pu">
+                <span class="close-butt">Terms & Conditions<img src="images/close.png"></span>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Q is ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.
+                </div>
+                <div class="accept-app">
+                	<label class="checkbox-inline"><input type="checkbox" class="" id="stepfour" value="" data-validation="custom" data-validation-error-msg="Please accept the checkbox for approval" required>Yes, I have read and agree.</label>
+                </div>
+                <div class="accept-step">Step 5</div>
+                <div class="accept-app m-b-5"><b>APPLICATION AGREEMENT</b> - By checking the box and electronically signing below, you agree to the Application Agreement. <span class="app-auth">Click here to read.</span></div>
+                <div class="tc-credits-app">
+                <span class="close-butt">Terms & Conditions<img src="images/close.png"></span>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Q is ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.
+                </div>
+                <div class="accept-app">
+                	<label class="checkbox-inline"><input type="checkbox" class="" id="stepfive" value="" data-validation="custom" data-validation-error-msg="Please accept the checkbox for approval" required>Yes, I have read and agree.</label>
+                </div>
+            </div>
+            <div class="col-12 col-sm-12">
+                <div class="electronic-sign m-b-10"><span>Electronic Signature</span> Type your name in the box to indicate your electronic signature, then click the "accept" button.</div>
+            </div>
+            
+            <div class="col-sm-5">
+              	<div class="form-group">
+                	
+                    <input type="text" class="form-control alphabetsonly" name="electrosign" data-validation="required custom" data-validation-regexp="^[A-Za-z\s]{5,101}$" data-validation-error-msg-custom="Please enter a valid signature" data-validation-error-msg-container="#electrosign-error" placeholder="">
+                  <div id="electrosign-error"></div>
+              	</div>
+            </div>
+            <div class="col-sm-7"></div>
+            <div class="col-6 col-sm-6">
+                <div class="form-group btn-group-sm text-left">
+                	<button type="button" class="btn btn-subm" onClick="location.href = 'banking-information.html';"><span class="glyphicon glyphicon-triangle-left"></span> Back</button>
+              	</div>
+           </div>
+            <div class="col-6 col-sm-6">
+              <div class="form-group btn-group-sm text-right">
+                <button type="submit" class="btn btn-subm"> ACCEPT <span class="glyphicon "></span></button>
+              </div>
+            </div>
+          </form>
+          </div>
+      </section>
+      </div>
+  </div>
+  </div>
+<!-- Footer -->
+<footer class="site-footer">
+    <div class="site-footer-legal">© All rights reserved 2018</div>
+    <div class="site-footer-right"> Powered by <img src="images/ivita-logo.png" class="img-fluid" width="186" height="60" alt="Powered by IVITA Financial" /> </div>
+</footer>
+<script src='js/jquery-3.3.1.slim.min.js'></script> 
+<script src='js/bootstrap.min.js'></script> 
+<script src='js/gijgo.min.js'></script> 
+<script src="js/jquery.form-validator.min.js"></script> 
+<script src="js/toggleDisabled.js"></script> 
+<script src="js/date.js"></script> 
+<script src="js/html5.js"></script> 
+<script src='js/custom.js'></script>
+</body>
+</html>

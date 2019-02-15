@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+<meta name="description" content="">
+<meta name="author" content="">
+<title>Income Information</title>
+<!-- Stylesheets -->
+<link rel="stylesheet" href="css/normalize.css">
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/util.css">
+<link rel="stylesheet" href="css/gijgo.min.css">
+<link rel="stylesheet" href="css/bootstrap-glyphicons.min.css">
+<link rel="stylesheet" href="css/form-validator-theme-default.min.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/skin.css">
+<!--[if lt IE 9]>
+    <script src="js/html5shiv.min.js"></script>
+    <![endif]-->
+<!--[if lt IE 10]>
+    <script src="js/media.match.min.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+<script src="js/breakpoints.min.js"></script>
+<script>
+    Breakpoints();
+  </script>
+</head>
+<body>
+<!-- Header -->
+<header class="container-fluid">
+  <div class="row header-block">
+    <div class="col-6 col-sm-6 header-logo1"> <img src="images/healthcare-logo.png" width="189" height="59" class="img-fluid" alt="Community Acute Care Center" /> </div>
+    <div class="col-6 col-sm-6 header-logo2"><img src="images/bank-logo.png" width="151" height="70" class="img-fluid" alt="National Bank" /> </div>
+  </div>
+</header>
+<!-- Main Container -->
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-xs-8 col-md-8 offset-md-2 page-block">
+      <!-- Navigation -->
+      <nav class="row">
+        <div class="col first-link"><a class="nav-links">Patient Information</a></div>
+        <div class="col second-link"><a class="nav-links">Guarantor Information</a></div>
+        <div class="col third-link active-link"><a class="nav-links">Income Information</a></div>
+        <div class="col fourth-link"><a class="nav-links">Banking Information</a></div>
+        <div class="col fifth-link"><a class="nav-links">Approval Status</a></div>
+      </nav>
+      <!-- Heading and form content -->
+      <section class="row">
+        <div class="col-12 col-xs-10 col-md-10 offset-md-1 m-t-20">
+          <h1 class="form-heading">Income Information </h1>
+          <div class="notes text-center">Tell us about your paycheck or other regular sources of income. Alimony, child support or separate maintenance income neeed not be revealed if you do not wish those to be considered as a basis for repaying this loan</div>
+        </div>
+        <div class="col-12 col-xs-8 col-md-8 offset-md-2">
+          <!-- Form Success or Error Alerts Start -->
+          <div class="alert alert-success"> <strong>Success!</strong> </div>
+          <div class="alert alert-danger"> <strong>Error!</strong> </div>
+          <!-- Form Success or Error Alerts End -->
+          <form action="/" method="post" id="incomeinfo" class="m-t-40 m-b-40 toggle-disabled">
+            <div class="form-group row">
+              <label for="sourceincome" class="col-sm-6 col-form-label">What is your main source of income?</label>
+              <div class="col-sm-6">
+                <select id="oftenpaid" class="form-control" required name="sourceincome">
+                  <option value="" selected disabled>Please select</option>
+					<option value="1">Weekly</option>
+                    <option value="2">Biweekly</option>
+                    <option value="9">Semimonthly</option>
+                    <option value="10">Monthly</option>
+                </select>
+              </div>
+            </div>
+            <div id="nine" style="display:none;">
+            <div id="oftenpaidsel" class="form-group row">
+              <label for="oftenpaidone" class="col-sm-6 col-form-label">How often are you paid?</label>
+              <div class="col-sm-6">
+                <select id="oftenpaidone" class="form-control withopt" required name="oftenpaidone">
+                  <option value="" selected disabled>Please select</option>
+                   <option value="3">Two specific days</option>
+                   <option value="4">Specific weeks and specific days</option>
+                </select>
+              </div>
+            </div>
+            </div>
+            <div id="ten" style="display:none;">
+            <div id="oftenpaidsel" class="form-group row">
+              <label for="oftenpaidtwo" class="col-sm-6 col-form-label">How often are you paid?</label>
+              <div class="col-sm-6">
+                <select id="oftenpaidtwo" class="form-control withopt" required name="oftenpaidtwo">
+                  <option value="" selected disabled>Please select</option>
+                   <option value="5">Specific day</option>
+					<option value="6">Specific week and day</option>
+					<option value="7">Number of business after a specific day</option>
+					<option value="8">Count of certain day after specific day</option>
+                </select>
+              </div>
+            </div>
+            </div> 
+            <div id="one" style="display:none;">
+                <div class="form-group row">
+                  <label for="daypaid" class="col-sm-6 col-form-label">Day of the week</label>
+                  <div class="col-sm-6">
+                    <select class="form-control" name="daypaid" required>
+                      <option value="" selected disabled>Please select</option>
+                      <option value="Monday">Monday</option>
+                      <option value="Tuesday">Tuesday</option>
+                      <option value="Wednesday">Wednesday</option>
+                      <option value="Thursday">Thursday</option>
+                      <option value="Friday">Friday</option>
+                    </select>
+                  </div>  	
+                </div>
+            </div>
+            <div id="two" style="display:none;">
+                <div class="form-group row">
+                  <label for="daypaid" class="col-sm-6 col-form-label">Day of the week</label>
+                  <div class="col-sm-6">
+                    <select id="daypaid" class="form-control" name="daypaid" required>
+                      <option value="" selected disabled>Please select</option>
+                      <option value="weekday">Monday</option>
+                      <option value="weekday">Tuesday</option>
+                      <option value="weekday">Wednesday</option>
+                      <option value="weekday">Thursday</option>
+                      <option value="weekday">Friday</option>
+                    </select>
+                  </div>
+                  <div id="weekselect" class="m-t-10" style="display:none;">
+                        <label for="paymentdate" class="col-sm-12 col-form-label">Select last payment Date</label>
+                        <div class="col-sm-12">
+                        <label class="radio-inline"><input type="radio" name="paymentdate" value="Payment Date" >12/06/2018 <span class="checkmark"></span> </label>
+                        <label class="radio-inline"><input type="radio" name="paymentdate" value="Payment Date" >11/09/2018<span class="checkmark"></span> </label>      
+                        </div>
+					</div>
+                </div>
+            </div>
+           
+            <div id="three" style="display:none;">
+                <div class="form-group row">
+                  <label for="dayfirst" class="col-sm-6 col-form-label">First Pay Day of the Month</label>
+                  <div class="col-sm-6">
+                    <select class="form-control" name="dayfirst" required>
+                        <option value="" selected disabled>Please select</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                        <option value="13">13</option>
+                        <option value="14">14</option>
+                        <option value="15">15</option>
+                        <option value="16">16</option>
+                        <option value="17">17</option>
+                        <option value="18">18</option>
+                    </select>
+                  </div>
+                </div>
+                
+                <div class="form-group row">  
+                  <label for="daymonth" class="col-sm-6 col-form-label">Second Pay Day of the Month</label>
+                  <div class="col-sm-6">
+                    <select class="form-control" name="daymonth" required>
+                        <option value="" selected disabled>Please select</option>
+                        <option value="19">19</option>
+                        <option value="20">20</option>
+                        <option value="21">21</option>
+                        <option value="22">22</option>
+                        <option value="23">23</option>
+                        <option value="24">24</option>
+                        <option value="25">25</option>
+                        <option value="26">26</option>
+                        <option value="27">27</option>
+                        <option value="28">28</option>
+                        <option value="29">29</option>
+                        <option value="30">30</option>
+                        <option value="End of month">End of month</option>
+                    </select>
+                  </div>
+                </div>
+             </div>
+            
+            <div id="four" style="display:none;">
+                    <div class="form-group row">
+                      <label for="firstweek" class="col-sm-6 col-form-label">First Pay Week</label>
+                      <div class="col-sm-6">
+                        <select class="form-control" name="firstweek" required>
+                            <option value="" selected disabled>Please select</option>
+                            <option value="First Week">First Week</option>
+                            <option value="Second Week">Second Week</option>
+                            <option value="Third Week">Third Week</option>
+                        </select>
+                      </div>
+                      </div>
+                    <div class="form-group row">
+                          <label for="firstday" class="col-sm-6 col-form-label">First Pay Day</label>
+                          <div class="col-sm-6">
+                            <select class="form-control" name="firstday" required>
+                                <option value="" selected disabled>Please select</option>
+                                <option value="Monday">Monday</option>
+                                <option value="Tuesday">Tuesday</option>
+                                <option value="Wednesday">Wednesday</option>
+                                <option value="Thursday">Thursday</option>
+                                <option value="Friday">Friday</option>
+                            </select>
+                          </div>
+                    </div>
+                    <div class="form-group row">
+                          <label for="secondweek" class="col-sm-6 col-form-label">Second Pay Week</label>
+                          <div class="col-sm-6">
+                            <select class="form-control" name="secondweek" required>
+                                <option value="" selected disabled>Please select</option>
+                                <option value="Third Week">Third Week</option>
+                                <option value="Fourth Week">Fourth Week</option>
+                                <option value="Last Week">Last Week</option>
+                            </select>
+                          </div>
+                    </div>
+                    <div class="form-group row">
+                          <label for="secondday" class="col-sm-6 col-form-label">Second Pay Day</label>
+                          <div class="col-sm-6">
+                            <select class="form-control" name="secondday" required>
+                                <option value="" selected disabled>Please select</option>
+                                <option value="Monday">Monday</option>
+                                <option value="Tuesday">Tuesday</option>
+                                <option value="Wednesday">Wednesday</option>
+                                <option value="Thursday">Thursday</option>
+                                <option value="Friday">Friday</option>
+                            </select>
+                          </div>
+                    </div>
+            </div>
+            
+            <div id="five" style="display:none;">
+                <div class="form-group row">
+                  <label for="paymonth" class="col-sm-6 col-form-label">Pay Day of Month</label>
+                  <div class="col-sm-6">
+                    <select class="form-control" name="paymonth" required>
+                        <option value="" selected disabled>Please select</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                        <option value="13">13</option>
+                        <option value="14">14</option>
+                        <option value="15">15</option>
+                        <option value="16">16</option>
+                        <option value="17">17</option>
+                        <option value="18">18</option>
+                        <option value="19">19</option>
+                        <option value="20">20</option>
+                        <option value="21">21</option>
+                        <option value="22">22</option>
+                        <option value="23">23</option>
+                        <option value="24">24</option>
+                        <option value="25">25</option>
+                        <option value="26">26</option>
+                        <option value="27">27</option>
+                        <option value="28">28</option>
+                        <option value="29">29</option>
+                        <option value="30">30</option>
+                        <option value="End of month">End of month</option>
+                    </select>
+                  </div>
+                </div>
+            </div>
+           
+            <div id="six" style="display:none;"> 
+                <div class="form-group row">
+                  <label for="payweek" class="col-sm-6 col-form-label">Pay Week</label>
+                  <div class="col-sm-6">
+                    <select class="form-control" name="payweek" required>
+                        <option value="" selected disabled>Please select</option>
+                        <option value="First Week">First Week</option>
+                        <option value="Second Week">Second Week</option>
+                        <option value="Third Week">Third Week</option>
+                        <option value="Last Week">Last Week</option>
+                    </select>
+                  </div>
+                  </div>
+                  
+                <div class="form-group row">
+                      <label for="payday" class="col-sm-6 col-form-label">Pay Day</label>
+                      <div class="col-sm-6">
+                        <select class="form-control" name="payday" required>
+                            <option value="" selected disabled>Please select</option>
+                            <option value="Monday">Monday</option>
+                            <option value="Tuesday">Tuesday</option>
+                            <option value="Wednesday">Wednesday</option>
+                            <option value="Thursday">Thursday</option>
+                            <option value="Friday">Friday</option>
+                        </select>
+                      </div>
+                </div>
+             </div>
+             
+            <div id="seven" style="display:none;">   
+                <div class="form-group row">
+                  <label for="businessdays" class="col-sm-6 col-form-label">Number of business days</label>
+                  <div class="col-sm-6">
+                    <select class="form-control" name="businessdays" required>
+                        <option value="" selected disabled>Please select</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label for="afterdays" class="col-sm-6 col-form-label">After which day</label>
+                  <div class="col-sm-6">
+                    <select class="form-control" name="afterdays" required>
+                        <option value="" selected disabled>Please select</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                        <option value="13">13</option>
+                        <option value="14">14</option>
+                        <option value="15">15</option>
+                        <option value="16">16</option>
+                        <option value="17">17</option>
+                        <option value="18">18</option>
+                        <option value="19">19</option>
+                        <option value="20">20</option>
+                        <option value="21">21</option>
+                        <option value="22">22</option>
+                        <option value="23">23</option>
+                        <option value="24">24</option>
+                        <option value="25">25</option>
+                        <option value="26">26</option>
+                        <option value="27">27</option>
+                        <option value="28">28</option>
+                        <option value="29">29</option>
+                        <option value="30">30</option>
+                        <option value="End of month">End of month</option>
+                    </select>
+                  </div>
+                </div>
+             </div>
+             
+            <div id="eight" style="display:none;">
+                <div class="form-group row">
+                      <label for="paydays" class="col-sm-6 col-form-label">Pay Day</label>
+                      <div class="col-sm-6">
+                        <select class="form-control" name="paydays" required>
+                            <option value="" selected disabled>Please select</option>
+                            <option value="Monday">Monday</option>
+                            <option value="Tuesday">Tuesday</option>
+                            <option value="Wednesday">Wednesday</option>
+                            <option value="Thursday">Thursday</option>
+                            <option value="Friday">Friday</option>
+                        </select>
+                      </div>
+                </div>
+                <div class="form-group row">
+                  <label for="count" class="col-sm-6 col-form-label">Count</label>
+                  <div class="col-sm-6">
+                    <select class="form-control" name="count" required>
+                        <option value="" selected disabled>Please select</option>
+                        <option value="First Week">First</option>
+                        <option value="Second Week">Second</option>
+                        <option value="Third Week">Third</option>
+                        <option value="Last Week">Fourth</option>
+                    </select>
+                  </div>
+                  </div>
+                <div class="form-group row">
+                  <label for="afterwhichday" class="col-sm-6 col-form-label">After which day</label>
+                  <div class="col-sm-6">
+                    <select class="form-control" name="afterwhichday" required>
+                        <option value="" selected disabled>Please select</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                        <option value="13">13</option>
+                        <option value="14">14</option>
+                        <option value="15">15</option>
+                        <option value="16">16</option>
+                        <option value="17">17</option>
+                        <option value="18">18</option>
+                        <option value="19">19</option>
+                        <option value="20">20</option>
+                        <option value="21">21</option>
+                        <option value="22">22</option>
+                        <option value="23">23</option>
+                        <option value="24">24</option>
+                        <option value="25">25</option>
+                        <option value="26">26</option>
+                        <option value="27">27</option>
+                        <option value="28">28</option>
+                        <option value="29">29</option>
+                        <option value="30">30</option>
+                        <option value="End of month">End of month</option>
+                    </select>
+                  </div>
+                </div>
+            </div>
+            
+            
+            
+            <div class="form-group row">
+              <label for="grossincome" class="col-sm-6 col-form-label">Gross Monthiy Income</label>
+              <div class="col-sm-6">
+              <div class="input-group"><div class="input-group-prepend"><span class="input-group-text">$</span></div>
+                 <input id="grossincome" type="text" class="estimate form-control numbersonly" name="grossincome" data-validation="required number negativecheck"  data-validation-allowing="range[10;1000000],float" data-validation-error-msg-number="Please enter a valid yearly income" data-validation-error-msg-negativecheck="Please enter a valid yearly income" data-validation-error-msg-container="#grossincome-error" placeholder="0.00" >
+              </div>
+              	<div id="grossincome-error"></div>
+              </div>
+              
+            </div>
+            <div class="col-sm-12 form-group">
+                       <label for="howoften" class="col-form-label text-left w-full">How are you paid?</label>
+                        <label class="radio-inline">
+                            <input type="radio" name="howoften" value="Direct Deposit" required data-validation-error-msg-container="#howoften-error">Direct Deposit<span class="checkmark"></span>
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="howoften" value="Paper Check">Paper Check<span class="checkmark"></span>
+                        </label>
+                        <div id="howoften-error" class="error-block"></div>
+    		</div> 
+            <div class="col-sm-12 form-group  ">
+                       <label for="paymentfall" class="col-form-label text-left w-full">If a pay date falls on a weekend or holiday, Are you paid before or after?</label>
+                        <label class="radio-inline">
+                            <input type="radio" name="paymentfall" value="Before" required data-validation-error-msg-container="#paymentfall-error">Before<span class="checkmark"></span>
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="paymentfall" value="After">After<span class="checkmark"></span>
+                        </label>
+                        <div id="paymentfall-error" class="error-block"></div>
+    		</div> 
+            <div class="form-group row">
+              <label for="recentdate" class="col-sm-6 col-form-label">Most recent pay date</label>
+              <div class="col-sm-6">
+                    <input type="date" id="mostdate" class="mostdate form-control" value="MM/DD/YYYY" placeholder="MM/DD/YYYY" readonly>
+              </div>
+              <div id="date-error"></div>
+            </div>
+            <div class="form-group row">
+              <label for="upcomingdate" class="col-sm-6 col-form-label">Next upcoming pay date</label>
+              <div class="col-sm-6">
+				<input type="date" id="nextdate" class="nextdate form-control" value="MM/DD/YYYY" placeholder="MM/DD/YYYY" readonly>
+              </div>
+              <div id="date1-error"></div>
+            </div>
+            <div class="col-sm-12  notes text-left">These dates MUST be accurate to calculate your loan. Pay dates cannot fall on a weekend, holiday or other non-banking day.</div>
+            <div class="row">
+              <div class="col-6 col-sm-6">
+                <div class="form-group btn-group-sm text-left">
+                  <button type="button" class="btn btn-subm" onClick="location.href = 'guarantor-information.html';"><span class="glyphicon glyphicon-triangle-left"></span> Back</button>
+                </div>
+              </div>
+              <div class="col-6 col-sm-6">
+                <div class="form-group btn-group-sm text-right">
+                  <button type="submit" class="btn btn-subm" id="btnsubmit">Next <span class="glyphicon glyphicon-triangle-right"></span></button>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>
+<!-- Footer -->
+<footer class="site-footer">
+  <div class="site-footer-legal">© All rights reserved 2018</div>
+  <div class="site-footer-right"> Powered by <img src="images/ivita-logo.png" class="img-fluid" width="186" height="60" alt="Powered by IVITA Financial" /> </div>
+</footer>
+<script src='js/jquery-3.3.1.slim.min.js'></script>
+<script src='js/bootstrap.min.js'></script>
+<script src='js/gijgo.min.js'></script>
+<script src="js/jquery.form-validator.min.js"></script>
+<script src="js/toggleDisabled.js"></script>
+<script src="js/date.js"></script>
+<script src="js/html5.js"></script>
+<script src='js/custom.js'></script>
+</body>
+</html>

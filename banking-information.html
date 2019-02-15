@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+<meta name="description" content="">
+<meta name="author" content="">
+<title>Banking Information</title>
+<!-- Stylesheets -->
+<link rel="stylesheet" href="css/normalize.css">
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/util.css">
+<link href="css/gijgo.min.css" rel="stylesheet">
+<link href="css/bootstrap-glyphicons.min.css" rel="stylesheet">
+<link rel="stylesheet" href="css/form-validator-theme-default.min.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/skin.css">
+<!--[if lt IE 9]>
+    <script src="js/html5shiv.min.js"></script>
+    <![endif]-->
+<!--[if lt IE 10]>
+    <script src="js/media.match.min.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+<script src="js/breakpoints.min.js"></script>
+<script>
+    Breakpoints();
+</script>
+</head>
+<body onLoad="debitshowhide();">
+<!-- Header -->
+<header class="container-fluid">
+  <div class="row header-block">
+    <div class="col-6 col-sm-6 header-logo1"> <img src="images/healthcare-logo.png" width="189" height="59" class="img-fluid" alt="Community Acute Care Center" /> </div>
+    <div class="col-6 col-sm-6 header-logo2"><img src="images/bank-logo.png" width="151" height="70" class="img-fluid" alt="National Bank" /> </div>
+  </div>
+</header>
+
+<!-- Main Container -->
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-xs-8 col-md-8 offset-md-2 page-block"> 
+      
+      <!-- Navigation -->
+      <nav class="row">
+        <div class="col first-link"><a class="nav-links">Patient Information</a></div>
+        <div class="col second-link"><a class="nav-links">Guarantor Information</a></div>
+        <div class="col third-link"><a class="nav-links">Income Information</a></div>
+        <div class="col fourth-link active-link"><a class="nav-links">Banking Information</a></div>
+        <div class="col fifth-link"><a class="nav-links">Approval Status</a></div>
+      </nav>
+      
+      <!-- Heading and form content -->
+      <section class="row" style="min-height:700px;">
+        <div class="col-12 col-xs-8 col-md-8 offset-md-2 m-t-20">
+          <h1 class="form-heading">Banking Information </h1>
+          <div class="notes text-center">To make your payments, you need a valid checking account. Please provide your account information</div>
+          <!-- Form Success or Error Alerts Start -->
+          <div class="alert alert-success"> <strong>Success!</strong> </div>
+          <div class="alert alert-danger"> <strong>Error!</strong> </div>
+          <!-- Form Success or Error Alerts End -->
+          
+            <div class="form-group row">
+              <label for="paymentradio" class="col-sm-12 col-form-label">How do you want to make payments?</label>
+              <div class="col-sm-12">
+                	<label class="radio-inline">
+                  		<input id="btnfundtransfer" type="radio" name="paymentradio" value="2" required>Electronic Funds Transfer <span class="checkmark"></span> 
+                  	</label>
+                	<label class="radio-inline">
+                  		<input id="btndebit" type="radio" name="paymentradio" value="3">Debit Card <span class="checkmark"></span>
+                    </label>
+                   <label class="radio-inline">
+                  		<input id="btncheck" type="radio" name="paymentradio" value="4">Check<span class="checkmark"></span>
+                   </label>
+              </div>
+            </div>
+          
+          <div id="fundtransfer" class="moneytransfer" style="display:none;">
+            <form action="approval-status.html" method="post" id="bankinformation-eft" class=" m-b-40 row form toggle-disabled">
+              <div class="col-sm-5">
+              	
+                <div class="form-group row">
+                  <label for="acctype" class="col-sm-12 col-form-label">Choose an account type</label>
+                  <div class="col-sm-12">
+                    <label class="radio-inline">
+                    	<input type="radio" name="acctype" id="savtype" value="5" >Savings Account<span class="checkmark"></span> 
+                    </label>
+                    <label class="radio-inline">
+                    	<input type="radio" name="acctype" id="acctype" value="6" required>Checking Account<span class="checkmark"></span>
+                    </label>
+                  </div>
+            	</div>	
+              	
+                <div class="form-group form-group-reg" style="display:none;">
+    				<label for="routnum" class="col-form-label text-left w-full">Routing Number</label>
+    				<input type="text" class="form-control numbersonly" maxlength="9" name="routnum" data-validation="required custom"  data-validation-regexp="^[0-9]{9}$" data-validation-error-msg-custom="Please enter a valid routing number" data-validation-error-msg-container="#routnum-error" placeholder="XXXXXXXXX" required>
+    				<div id="routnum-error" class="error-block"></div>
+				</div>
+                <div class="form-group form-group-reg" style="display:none;">
+    				<label for="accnumber" class="col-form-label text-left w-full">Account Number</label>
+    				<input type="text" class="form-control numbersonly" maxlength="12" name="accnumber_confirmation" data-validation="required custom"  data-validation-regexp="^[0-9]{8,12}$" data-validation-error-msg-custom="Please enter a valid account number" data-validation-error-msg-container="#accnumber-error" placeholder="XXXXXXXXXX" required>
+    				<div id="accnumber-error" class="error-block"></div>
+				</div>
+                
+              </div>
+              <!-- Right Column -->
+              <div class="col-sm-7"><div class="check-img"> <img src="images/check.png" class="mx-auto d-block" alt="cheque" width="100%"></div></div>
+              <div class="col-sm-12">
+                <div class="notes-text">* If you have chosen debit card as your method of payment, we will collect card information after you submit your application </div>
+                <div class="notes text-left">Your application is now complete. To submit your application, click the <span>"Submit Application"</span> button below.By submitting, you agree to these <span class="bank-term-cond">Terms & Conditions.</span> </div>
+                <div class="bank-tc">
+                <span class="close-butt">Terms & Conditions<img src="images/close.png"></span>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Q is ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.
+                </div>
+              </div>
+              <div class="col-5 col-sm-5">
+                <div class="form-group btn-group-sm text-left">
+                  <button type="button" class="btn btn-subm" onClick="location.href = 'income-information.html';"><span class="glyphicon glyphicon-triangle-left"></span> Back</button>
+                </div>
+              </div>
+              <div class="col-7 col-sm-7">
+                <div class="form-group btn-group-sm text-right">
+                  <button type="submit" class="btn btn-subm"> Submit Application <span class="glyphicon glyphicon-ok"></span></button>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div id="debitcard" class="moneytransfer" style="display:none;">
+            <form action="approval-status.html" method="post" id="bankinformation-debit" class="row form toggle-disabled">
+              <div class="col-sm-5">
+                <div class="form-group">
+                  <label for="cdname" class="col-form-label">Cardholder Name</label>
+                  <input type="text" class="form-control alphabetsonly" name="cdname" data-validation="required custom" data-validation-regexp="^[A-Za-z\s]{5,50}$" data-validation-error-msg-custom="Please enter a valid card name" data-validation-error-msg-container="#cdname-error" placeholder="">
+                  <div id="cdname-error"></div>
+                </div>
+                <div class="form-group">
+                  <label for="debitnum" class="col-form-label">Debit Card Number</label>
+                  <input type="text" class="form-control numbersonly" name="debitnum" data-validation="required custom"  data-validation-regexp="^[0-9]{14,17}$" data-validation-error-msg-custom="Please enter a valid debit card number" data-validation-error-msg-container="#debitnum-error">
+                  <div id="debitnum-error"></div>
+                </div>
+                <div class="form-group">
+                  <label for="expdate" class="col-form-label">Expiration Date</label>
+                  <input type="text" class="form-control expiryval" name="expdate" data-validation="required custom"  data-validation-regexp="^[0-9/]{5}$"  data-validation-error-msg-custom="Please enter a valid Month and Year MM/YY"  data-validation-error-msg-container="#expdate-error" maxlength="5" required>
+                	<div id="expdate-error"></div>
+                </div>
+                
+                <div class="form-group">
+                  <label for="secvv" class="col-form-label">Security Code (CVV)</label>
+                  <input type="text" class="form-control numbersonly" name="secvv" data-validation="required custom"  data-validation-regexp="^[0-9]{3}$"  data-validation-error-msg-custom="Please enter a valid security code" data-validation-error-msg-container="#secvv-error" placeholder="XXXXXXXXX" maxlength="3" required>
+    				<div id="secvv-error" class="error-block"></div>
+                </div>
+                
+              </div>
+              <!-- Right Column -->
+              <div class="col-sm-7"><div class="check-img"> <img src="images/debit.png" class="mx-auto d-block" alt="cheque" width="100%" ></div> </div>
+              <div class="col-sm-12">
+                <div class="notes-text">* If you have chosen debit card as your method of payment, we will collect card information after you submit your application </div>
+                <div class="notes text-left">Your application is now complete. To submit your application, click the <span>"Submit Application"</span> button below.By submitting, you agree to these <span class="bank-term-cond">Terms & Conditions.</span> </div>
+                <div class="bank-tc">
+                <span class="close-butt">Terms & Conditions<img src="images/close.png"></span>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Q is ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.
+                </div>
+              </div>
+              <div class="col-5 col-sm-5">
+                <div class="form-group btn-group-sm text-left">
+                  <button type="button" class="btn btn-subm" onClick="location.href = 'income-information.html';"><span class="glyphicon glyphicon-triangle-left"></span> Back</button>
+                </div>
+              </div>
+              <div class="col-7 col-sm-7">
+                <div class="form-group btn-group-sm text-right">
+                  <button type="submit" class="btn btn-subm"> Submit Application <span class="glyphicon glyphicon-ok"></span></button>
+                </div>
+              </div>
+            </form>
+          </div>
+          
+          <div id="check" class="moneytransfer" style="display:none;"> 
+ 				<form action="approval-status.html" method="post" id="bankinformation-chk" class="row form toggle-disabled">
+               		<div class="col-sm-12">
+                		<div class="form-group form-group-reg">
+    						<div class="notes text-left">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </div>
+						</div>
+              		</div>
+              
+                    <div class="col-5 col-sm-5">
+                		<div class="form-group btn-group-sm text-left">
+                  			<button type="button" class="btn btn-subm" onClick="location.href = 'income-information.html';"><span class="glyphicon glyphicon-triangle-left"></span> Back</button>
+                		</div>
+              		</div>
+                      <div class="col-7 col-sm-7">
+                        <div class="form-group btn-group-sm text-right">
+                          <button type="submit" class="btn btn-subm"> Submit Application <span class="glyphicon glyphicon-ok"></span></button>
+                        </div>
+                      </div>
+               	</form>
+            </div>
+            
+        </div>
+      </section>
+    </div>
+  </div>
+</div>
+<!-- Footer -->
+<footer class="site-footer">
+  <div class="site-footer-legal">© All rights reserved 2018</div>
+  <div class="site-footer-right"> Powered by <img src="images/ivita-logo.png" class="img-fluid" width="186" height="60" alt="Powered by IVITA Financial" /> </div>
+</footer>
+<script src='js/jquery-3.3.1.slim.min.js'></script> 
+<script src='js/bootstrap.min.js'></script> 
+<script src='js/gijgo.min.js'></script> 
+<script src="js/jquery.form-validator.min.js"></script> 
+<script src="js/toggleDisabled.js"></script> 
+<script src="js/date.js"></script> 
+<script src="js/html5.js"></script> 
+<script src="js/security.js"></script> 
+<script src='js/custom.js'></script>
+</body>
+</html>
